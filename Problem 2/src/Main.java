@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
-	static long startTime = System.currentTimeMillis();
+	static long startTime = System.nanoTime();
 	static int[] temp = {1,2,3,5,8,13,21,34,55,89};
 	static int[] fibArray = Arrays.copyOf(temp, 40);
 	public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Main {
 			}
 			i++;
 		}
-		System.out.println(sum + ", in " + (System.currentTimeMillis() - startTime) + " ms");
+		System.out.println(sum + ", in " + (System.nanoTime() - startTime) + " ms");
 	}
 	public static int fibonacci(int term){
 		if(term == 1){
@@ -28,7 +28,9 @@ public class Main {
 			return fibArray[term];
 		}
 		else {
-			return fibonacci(term - 1) +fibonacci(term - 2);
+			int value = fibonacci(term - 1) +fibonacci(term - 2);
+			fibArray[term] = value;
+			return value;
 		}
 	}	
 }
