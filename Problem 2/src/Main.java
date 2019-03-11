@@ -15,7 +15,7 @@ public class Main {
 			}
 			i++;
 		}
-		System.out.println(sum + ", in " + (System.nanoTime() - startTime) + " ms");
+		System.out.println(sum + ", in " + (System.nanoTime() - startTime) + " ns");
 	}
 	public static int fibonacci(int term){
 		if(term == 1){
